@@ -11,7 +11,9 @@ import {FullUserComponent} from './components/full-user/full-user.component';
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent
+    UserComponent,
+    FullUserComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
