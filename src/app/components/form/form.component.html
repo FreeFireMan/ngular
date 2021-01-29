@@ -1,0 +1,44 @@
+<form [formGroup]="myForm">
+
+  <body>
+  <div class="form-wrapper">
+    <div class="form-block">
+      <label>Name:</label>
+      <input type="text" formControlName="name">
+      <span *ngIf="myForm.controls.name.invalid">Min length 3 characters</span>
+    </div>
+    <div class="form-block">
+      <label>Age:</label>
+        <input type="number" formControlName="age">
+      <span *ngIf="myForm.controls.age.invalid">Min digit 1</span>
+    </div>
+    <div class="form-block">
+      <label>Email:</label>
+      <label>
+        <input type="email" formControlName="email">
+      </label>
+      <span *ngIf="myForm.controls.email.invalid">Enter your email</span>
+    </div>
+    <div class="form-block">
+      <label>Phone :</label>
+        <input type="text" formControlName="phone">
+      <span *ngIf="myForm.controls.phone.invalid">Enter your phone</span>
+    </div>
+    <div class="form-button">
+      <button
+        [disabled]="myForm.invalid"
+        (click)="saveFormData(myForm)">Save</button>
+    </div>
+    <div class="Data"
+         *ngFor="let visitor of visitors">
+      <ul>
+        <h1>Hi , {{visitor.name}}</h1>
+        <li> {{visitor.name}}</li>
+        <li>{{visitor.age}}</li>
+        <li> {{visitor.email}}</li>
+        <li>{{visitor.phone}}</li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</form>
